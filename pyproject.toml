@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "process-xbeach-retriever"
+version = "1.0.0"
+description = "PyGeoAPI process to retrieve XBeach runup model data"
+readme = ""
+authors = [
+  { name="Tommaso Redaelli", email="tommaso.redaelli@gecosistema.com" }
+]
+license = { text = "MIT" }
+keywords = []
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+
+dependencies = [
+  "click",
+  "numpy",
+  "pandas",
+  "geopandas",
+  "shapely",
+  "requests",
+  "boto3",
+  "dotenv"
+]
+
+[project.optional-dependencies]
+pygeoapi = [
+  "pygeoapi",
+]
+
+[project.urls]
+Homepage = "https://github.com/saferplaces/process-xbeach-retriever"
+
+[project.scripts]
+xbeach-retriever = "process_xbeach_retriever.main:cli_run_xbeach_retriever"
+xbeach_retriever = "process_xbeach_retriever.main:cli_run_xbeach_retriever"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
