@@ -133,7 +133,6 @@ CAERetrieverProcessor_cache
 CAERetrieverProcessor_tmp
 
 # Test folder
-tests/*
 !tests/unit-tests/
 !tests/unit-tests/*.py
 /**/*.geojson
